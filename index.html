@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Leyenda de Miau</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="Assets/Menu/Icono.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="juego"></div>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+    <script src="js/Pausa.js"></script>
+    <script src="js/Jugador.js"></script>
+    <script src="js/Menu.js"></script>
+    <script src="js/Mundo1.js"></script>
+    <script src="js/Slime.js"></script>
+    <script src="js/Game_Over.js"></script>
+    <script>
+        var config = {
+            type: Phaser.AUTO,
+            width: 800, 
+            height: 600, 
+            parent: 'juego',
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 300 },
+                    debug: false
+                }
+            },
+            scene: [Menu, Mundo1, Pausa, Game_Over] 
+        };
+
+        var game = new Phaser.Game(config);
+    </script>
+</body>
+</html>
