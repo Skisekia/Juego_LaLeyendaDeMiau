@@ -5,7 +5,7 @@ class Menu extends Phaser.Scene {
 
     preload() {
         // Carga de imágenes 
-        this.load.image('backgroundMenu', 'Assets/Menu/backgroundMenu.png');
+        this.load.image('backgroundMenu', 'Assets/Menu/BackgroundMenu.png');
         this.load.image('title', 'Assets/Menu/Titulo.png');
         this.load.image('enter', 'Assets/Menu/Press_Enter.png');
     }

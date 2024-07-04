@@ -7,11 +7,11 @@ class Mundo1 extends Phaser.Scene {
 
     preload() {
         // Precargar todo lo que necesito para el Mundo1
-        this.load.image('background', 'assets/environment/background.png');
-        this.load.image('middleground', 'assets/environment/middleground.png');
-        this.load.image('tiles', 'assets/environment/tileset.png');
-        this.load.image('collisions', 'assets/environment/collisions.png');
-        this.load.tilemapTiledJSON('map', 'assets/Mundos/Mundo1.json');
+        this.load.image('background', 'Assets/environment/background.png');
+        this.load.image('middleground', 'Assets/environment/middleground.png');
+        this.load.image('tiles', 'Assets/environment/tileset.png');
+        this.load.image('collisions', 'Assets/environment/collisions.png');
+        this.load.tilemapTiledJSON('map', 'Assets/Mundos/Mundo1.json');
 
         this.loadSprites(); // Llamo a la funcion para cargar las animaciones del personaje
 
