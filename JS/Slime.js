@@ -1,10 +1,14 @@
 class Slime extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y) {
         super(scene, x, y, 'slimeIdle0');
+        this.setOrigin(0.5, 0.5); // Ajusta esto según la necesidad
         scene.add.existing(this);
         scene.physics.world.enable(this);
-        this.body.setCollideWorldBounds(true);
+        this.body.setCollideWorldBounds(false);
         this.body.setSize(32, 24);
+        this.body.setOffset(0, 0); // Ajusta si es necesario
+        this.body.setImmovable(true);
+
 
         this.createAnimations();
         this.play('slimeIdle');
@@ -113,9 +117,6 @@ class Slime extends Phaser.GameObjects.Sprite {
     
         // Ataca si el jugador está suficientemente cerca y en el suelo
         if (distanceToPlayer < 50 && this.body.onFloor()) {
-            // Aquí podría ir la lógica para iniciar un ataque
         }
     }    
-
-    
 }

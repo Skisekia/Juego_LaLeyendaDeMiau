@@ -4,7 +4,7 @@ class Jugador extends Phaser.GameObjects.Sprite {
         this.scene.add.existing(this);  // Añade al personaje a la escena actual
         this.scene.physics.world.enable(this);  // Habilita las fisicas al personaje
         this.body.setCollideWorldBounds(false);  // Quita limites para que el personaje pueda caminar por todo el mapa
-        this.body.setSize(32, 24);  // Ajusta 'width' y 'height' a las dimensiones adecuadas del sprite del jugador
+        this.body.setSize(10, 23);  
         this.createAnimations();  // Funciuon para las animaciones
     }
 

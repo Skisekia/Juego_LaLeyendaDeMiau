@@ -15,7 +15,9 @@
     <script src="JS/Menu.js"></script>
     <script src="JS/Mundo1.js"></script>
     <script src="JS/Slime.js"></script>
+    <script src="JS/Bat.js"></script>
     <script src="JS/Game_Over.js"></script>
+    <script src="JS/Win.js"></script>
     <script>
         var config = {
             type: Phaser.AUTO,
@@ -29,7 +31,7 @@
                     debug: false
                 }
             },
-            scene: [Menu, Mundo1, Pausa, Game_Over] 
+            scene: [Menu, Mundo1, Pausa, Game_Over, Win] 
         };
 
         var game = new Phaser.Game(config);
