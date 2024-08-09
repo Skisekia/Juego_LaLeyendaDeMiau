@@ -3,20 +3,28 @@ class Game_Over extends Phaser.Scene {
         super({ key: 'Game_Over' });
     }
 
+    preload() {
+        this.load.image('LostBackground', 'Assets/Menu/Lost.png');
+    }
+
     create() {
         // Fondo negro
-        this.add.rectangle(0, 0, this.sys.game.config.width, this.sys.game.config.height, 0x000000, 0.5).setOrigin(0);
+        this.background = this.add.image(0, 0, 'LostBackground').setOrigin(0).setDisplaySize(this.sys.game.config.width, this.sys.game.config.height);
 
         // Texto de Game Over
         this.add.text(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'GAME OVER', {
-            font: '48px Arial',
-            fill: '#ff0000'
+            fontSize: '58px',
+            fontFamily: 'MedievalSharp',
+            fill: '#ff0000',
+            backgroundColor: 'rgba(0,0,0,0.8)'
         }).setOrigin(0.5);
 
         // Texto para reiniciar
         this.add.text(this.sys.game.config.width / 2, this.sys.game.config.height / 2 + 60, 'Presionar Enter para reiniciar', {
-            font: '24px Arial',
-            fill: '#ffffff'
+            fontSize: '24px',
+            fontFamily: 'MedievalSharp',
+            fill: '#ffffff',
+            backgroundColor: 'rgba(0,0,0,0.8)'
         }).setOrigin(0.5);
 
         // ENTER para reiniciar

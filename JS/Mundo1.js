@@ -57,16 +57,25 @@ class Mundo1 extends Phaser.Scene {
     create() {
         this.sound.stopAll();
 
-        this.mundoMusic = this.sound.add('mundoMusic', { volume: 0.05, loop: true });
+        this.mundoMusic = this.sound.add('mundoMusic', { volume: 0.3, loop: true });
         this.mundoMusic.play();
 
         const map = this.make.tilemap({ key: 'map' }); // Crea el mapa a partir del archivo JSON 
         const tileset = map.addTilesetImage('tileset', 'tiles'); // Añade el tiles al mapa.
         
-    
-        // Se configura el fondo y el fondo medio para que sean infinitos
-        this.background = this.add.tileSprite(0, 0, map.widthInPixels, this.sys.game.config.height, 'background').setOrigin(0, 0).setScrollFactor(0.5);
-        this.middleground = this.add.tileSprite(0, 0, map.widthInPixels, this.sys.game.config.height, 'middleground').setOrigin(0, 0).setScrollFactor(0.75);
+        var gameWidth = this.sys.game.config.width;
+        var gameHeight = this.sys.game.config.height;
+
+        this.background = this.add.tileSprite(0, 0, gameWidth, gameHeight, 'background')
+            .setOrigin(0, 0)
+            .setScrollFactor(0.5)
+            .setDisplaySize(gameWidth, gameHeight); // Ajustar el tamaño para cubrir completamente
+
+        this.middleground = this.add.tileSprite(0, 0, gameWidth, gameHeight, 'middleground')
+            .setOrigin(0, 0)
+            .setScrollFactor(0.75)
+            .setDisplaySize(gameWidth, gameHeight); // Ajustar el tamaño
+
     
         const mainLayer = map.createLayer('Main Layer', tileset, 0, 0); // Crea los bloques del tiles
         const collisionLayer = map.createLayer('Collisions Layer', tileset, 0, 0); // Crea las colisiones
@@ -121,8 +130,10 @@ class Mundo1 extends Phaser.Scene {
         this.danoCooldown = false; // Reinicia el cooldown de daño
         this.reiniciarVida();   
     
+        this.timer = 0;
         this.timerText = this.add.text(this.sys.game.config.width - 290, 185, 'Tiempo: 0', {
-            font: '18px Arial',
+            fontSize: '18px',
+            fontFamily: 'MedievalSharp',
             fill: '#ffffff'
         }).setOrigin(0, 0).setScrollFactor(0).setDepth(100).setScale(0.5);
 
