@@ -12,7 +12,7 @@ class Menu extends Phaser.Scene {
         this.load.audio('menuMusic', 'Assets/Musica/Menu.mp3');
         this.load.image('botonDerecho', 'Assets/Menu/Control.png');
         this.load.image('botonIzquierdo', 'Assets/Menu/Board.png');
-        this.load.image('texturaMedieval', 'Assets/Menu/Textura.png');
+        this.load.image('texturaMedieval', 'Assets/Menu/Texturas.png');
     }
 
     create() {
