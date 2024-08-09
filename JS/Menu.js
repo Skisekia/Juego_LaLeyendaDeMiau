@@ -10,9 +10,9 @@ class Menu extends Phaser.Scene {
         this.load.image('enter', 'Assets/Menu/Press_Enter.png');
         this.load.image('instructions', 'Assets/Menu/instructions.png');
         this.load.audio('menuMusic', 'Assets/Musica/Menu.mp3');
-        this.load.image('botonDerecho', 'Assets/Menu/control.png');
-        this.load.image('botonIzquierdo', 'Assets/Menu/board.png');
-        this.load.image('texturaMedieval', 'Assets/Menu/textura.png');
+        this.load.image('botonDerecho', 'Assets/Menu/Control.png');
+        this.load.image('botonIzquierdo', 'Assets/Menu/Board.png');
+        this.load.image('texturaMedieval', 'Assets/Menu/Textura.png');
     }
 
     create() {
